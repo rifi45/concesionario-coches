@@ -1,0 +1,51 @@
+@@startuml
+
+class Tienda{
+    -nombre : String 
+    -direccion : String
+    -vehiculos[] : Vehiculo
+}
+
+class Vehiculo{
+    #marca : String
+    #modelo : String
+    #ano : interface
+    
+    alquilar() : void 
+    devolver() : void
+}
+
+class Coche extends Vehiculo{
+    -numeroPuertas : int
+    -tipocombustible : String
+
+    +abrirMaletero() : void
+}
+
+class Furgoneta extends Vehiculo{
+    -capacidadCarga : int
+    +cargarMercancia() : void
+}
+
+class Camion extends Vehiculo{
+    -capacidadCarga : int
+    -tipoRemolque : String
+
+    +cargarMercancia() : void
+    +descargarMercancia() : void
+
+}
+
+class Moto extends Vehiculo{
+    -cilindrada : int
+    -tipoTransmision : String
+
+    +acelerar() : void
+    
+}
+
+
+Tienda *-- Vehiculo
+
+
+@@enduml
